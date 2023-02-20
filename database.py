@@ -26,7 +26,10 @@ class Database:
         """
         Constructor of the Database object, which stores the _dbfile ATTRIBUTE.
         """
-        self._dbfile = "/app.db"
+        import os
+        self._dbfile = os.path.abspath(os.path.join(os.path.dirname(__file__), "./app.db"))
+        
+        # os.path.relpath("C:/Users/CHALON_DT2/Documents/dev/itnetwork/app.db")
 
     # Methods related to connecting and disconnecting to/from the database:
     def connect(self):
